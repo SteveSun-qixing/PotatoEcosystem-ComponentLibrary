@@ -1,13 +1,18 @@
 /**
  * 布局组件导出
  *
- * 阶段4将实现以下组件:
- * - Grid (Row / Col)
- * - Flex
+ * 已实现:
+ * - Grid (Row / Col) - 24栅格系统
+ * - Flex - 弹性布局组件
+ * - Space - 间距组件
+ * - Layout / Header / Sider / Content / Footer - 经典布局组件
+ *
+ * 待实现:
  * - Container
- * - Layout / Header / Sider / Content / Footer
- * - Space
  * - Card
  */
 
-export {};
+export * from './Grid';
+export * from './Flex';
+export * from './Space';
+export * from './Layout';

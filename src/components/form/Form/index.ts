@@ -1,9 +1,14 @@
 /**
- * 表单组件导出
+ * Form 表单组件导出
  */
 
-// Form 组件
-export { Form, FormItem } from './Form';
+import Form from './Form.vue';
+import FormItem from './FormItem.vue';
+
+export { Form, FormItem };
+export default Form;
+
+// 类型导出
 export type {
   FormProps,
   FormEmits,
@@ -20,5 +25,6 @@ export type {
   FormValidateError,
   FormContext,
   FormItemContext,
-} from './Form';
-export { FORM_CONTEXT_KEY, FORM_ITEM_CONTEXT_KEY } from './Form';
+} from './types';
+
+export { FORM_CONTEXT_KEY, FORM_ITEM_CONTEXT_KEY } from './types';
