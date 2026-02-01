@@ -7,9 +7,12 @@
  * - Icon
  * - Tag
  *
- * 阶段6将实现:
+ * 阶段6已实现:
  * - Badge
  * - Avatar
+ * - Empty
+ *
+ * 阶段6待实现:
  * - Divider
  * - Progress
  * - Table
@@ -57,3 +60,33 @@ export type {
   TagPresetColor,
   TagSize,
 } from './Tag';
+
+// Badge 徽标组件
+export { Badge } from './Badge';
+export type {
+  BadgeProps,
+  BadgeEmits,
+  BadgeSlots,
+  BadgeInstance,
+  BadgeStatus,
+} from './Badge';
+
+// Avatar 头像组件
+export { Avatar } from './Avatar';
+export type {
+  AvatarProps,
+  AvatarEmits,
+  AvatarSlots,
+  AvatarInstance,
+  AvatarSize,
+  AvatarShape,
+} from './Avatar';
+
+// Empty 空状态组件
+export { Empty } from './Empty';
+export type {
+  EmptyProps,
+  EmptyEmits,
+  EmptySlots,
+  EmptyInstance,
+} from './Empty';

@@ -22,3 +22,6 @@ export * from './Switch/types';
 
 export { Textarea } from './Textarea';
 export * from './Textarea/types';
+
+export { Slider } from './Slider';
+export * from './Slider/types';

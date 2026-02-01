@@ -6,6 +6,7 @@
  * - Tooltip - 文字提示
  * - Modal - 对话框
  * - Message - 消息提示
+ * - Alert - 警告提示
  *
  * 待实现组件:
  * - Drawer - 抽屉
@@ -45,3 +46,39 @@ export type {
   MessageEmits,
   MessageContainerProps,
 } from './Message';
+
+// Alert 警告提示
+export { Alert } from './Alert';
+export type {
+  AlertProps,
+  AlertEmits,
+  AlertSlots,
+  AlertInstance,
+  AlertType,
+} from './Alert';
+
+// Drawer 抽屉（如果已实现）
+// export { Drawer } from './Drawer';
+// export type { DrawerProps, DrawerEmits, DrawerSlots, DrawerInstance } from './Drawer';
+
+// Popover 气泡卡片
+export { Popover } from './Popover';
+export type {
+  PopoverProps,
+  PopoverEmits,
+  PopoverSlots,
+  PopoverInstance,
+  PopoverPlacement,
+  PopoverTrigger,
+} from './Popover';
+
+// Progress 进度条
+export { Progress } from './Progress';
+export type {
+  ProgressProps,
+  ProgressEmits,
+  ProgressSlots,
+  ProgressType,
+  ProgressStatus,
+  ProgressSize,
+} from './Progress';
