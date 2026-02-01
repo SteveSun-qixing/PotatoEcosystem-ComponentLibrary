@@ -1,14 +1,14 @@
 /**
  * 基础组件导出
- *
- * 阶段3将实现以下组件:
- * - Button
- * - Input
- * - Textarea
- * - Select
- * - Checkbox / CheckboxGroup
- * - Radio / RadioGroup
- * - Switch
  */
 
-export {};
+export { Button } from './Button';
+export * from './Button/types';
+
+// 后续实现:
+// export { Input } from './Input';
+// export { Textarea } from './Textarea';
+// export { Select } from './Select';
+// export { Checkbox, CheckboxGroup } from './Checkbox';
+// export { Radio, RadioGroup } from './Radio';
+// export { Switch } from './Switch';
