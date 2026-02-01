@@ -1,12 +1,11 @@
 /**
  * Provider 组件导出
- *
- * 阶段2将实现以下组件:
- * - ThemeProvider
- * - ChipsProvider
- *
- * 阶段7将实现:
- * - ErrorBoundary
  */
 
-export {};
+export { default as ChipsProvider } from './ChipsProvider.vue';
+
+// 从 theme 模块重导出 ThemeProvider
+export { ThemeProvider } from '@/theme';
+
+// 阶段7将实现:
+// export { ErrorBoundary } from './ErrorBoundary';

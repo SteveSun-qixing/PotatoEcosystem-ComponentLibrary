@@ -11,9 +11,9 @@ export interface KernelRequest {
   /** 动作名称 */
   action: string;
   /** 请求参数 */
-  params?: Record<string, unknown>;
+  params?: Record<string, unknown> | undefined;
   /** 请求超时（毫秒） */
-  timeout?: number;
+  timeout?: number | undefined;
 }
 
 /**
