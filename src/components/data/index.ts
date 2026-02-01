@@ -1,7 +1,7 @@
 /**
  * 数据展示组件导出
  *
- * 阶段5将实现以下组件:
+ * 阶段5已实现组件:
  * - Text
  * - Image
  * - Icon
@@ -20,4 +20,40 @@
  * - Tree
  */
 
-export {};
+// Text 文本组件
+export { Text } from './Text';
+export type {
+  TextProps,
+  TextEmits,
+  TextSlots,
+  TextInstance,
+  TextType,
+  EllipsisConfig,
+  CopyableConfig,
+} from './Text';
+
+// Image 图片组件
+export { Image } from './Image';
+export type {
+  ImageProps,
+  ImageEmits,
+  ImageSlots,
+  ImageInstance,
+  ImageFit,
+  ImageStatus,
+} from './Image';
+
+// Icon 图标组件
+export { Icon } from './Icon';
+export type { IconProps, IconEmits, IconSlots, IconInstance } from './Icon';
+
+// Tag 标签组件
+export { Tag } from './Tag';
+export type {
+  TagProps,
+  TagEmits,
+  TagSlots,
+  TagInstance,
+  TagPresetColor,
+  TagSize,
+} from './Tag';
