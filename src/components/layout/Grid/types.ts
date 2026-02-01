@@ -3,11 +3,11 @@
  */
 
 import type { InjectionKey } from 'vue';
+import type { Breakpoint } from '@/types';
+import { BREAKPOINT_VALUES } from '@/types';
 
-/**
- * 响应式断点
- */
-export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+// Re-export for backward compatibility (internal use only)
+export type { Breakpoint } from '@/types';
 
 /**
  * 对齐方式
@@ -170,13 +170,6 @@ export interface RowContext {
 export const ROW_CONTEXT_KEY: InjectionKey<RowContext> = Symbol('chips-row-context');
 
 /**
- * 响应式断点值 (px)
+ * 响应式断点值 (px) - 从核心类型导入
  */
-export const BREAKPOINTS: Record<Breakpoint, number> = {
-  xs: 576,
-  sm: 576,
-  md: 768,
-  lg: 992,
-  xl: 1200,
-  xxl: 1600,
-};
+export { BREAKPOINT_VALUES };

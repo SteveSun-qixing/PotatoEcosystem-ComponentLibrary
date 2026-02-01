@@ -22,7 +22,7 @@
 import { computed, provide, ref, onMounted, onUnmounted } from 'vue';
 import { classNames } from '@/utils';
 import type { RowProps, RowContext, Breakpoint, Gutter } from './types';
-import { ROW_CONTEXT_KEY, BREAKPOINTS } from './types';
+import { ROW_CONTEXT_KEY, BREAKPOINT_VALUES } from './types';
 
 // Props
 const props = withDefaults(defineProps<RowProps>(), {
@@ -53,11 +53,11 @@ onUnmounted(() => {
  */
 const getCurrentBreakpoint = (): Breakpoint => {
   const width = screenWidth.value;
-  if (width >= BREAKPOINTS.xxl) return 'xxl';
-  if (width >= BREAKPOINTS.xl) return 'xl';
-  if (width >= BREAKPOINTS.lg) return 'lg';
-  if (width >= BREAKPOINTS.md) return 'md';
-  if (width >= BREAKPOINTS.sm) return 'sm';
+  if (width >= BREAKPOINT_VALUES.xxl) return 'xxl';
+  if (width >= BREAKPOINT_VALUES.xl) return 'xl';
+  if (width >= BREAKPOINT_VALUES.lg) return 'lg';
+  if (width >= BREAKPOINT_VALUES.md) return 'md';
+  if (width >= BREAKPOINT_VALUES.sm) return 'sm';
   return 'xs';
 };
 
