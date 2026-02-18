@@ -1,0 +1,22 @@
+{
+  "sys": {
+    "color": {
+      "surface": {
+        "base": {
+          "value": "#ffffff",
+          "type": "color"
+        },
+        "sunken": {
+          "value": "#f7f7f8",
+          "type": "color"
+        }
+      },
+      "border": {
+        "focus": {
+          "value": "#2563eb",
+          "type": "color"
+        }
+      }
+    }
+  }
+}

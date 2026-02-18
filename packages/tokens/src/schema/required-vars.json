@@ -1,0 +1,14 @@
+{
+  "requiredVars": [
+    "sys-color-surface-base",
+    "sys-color-text-primary",
+    "sys-color-border-subtle",
+    "sys-color-border-focus",
+    "sys-motion-duration-fast",
+    "sys-motion-spring-stiffness",
+    "sys-elevation-1",
+    "cmp-button-bg",
+    "cmp-button-text",
+    "cmp-input-bg"
+  ]
+}

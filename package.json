@@ -1,94 +1,19 @@
 {
-  "name": "@chips/components",
-  "version": "0.1.0",
-  "description": "薯片生态官方UI组件库 - 无样式组件，支持主题系统",
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-      }
-    },
-    "./components/*": {
-      "import": {
-        "types": "./dist/components/*/index.d.ts",
-        "default": "./dist/components/*/index.js"
-      },
-      "require": {
-        "types": "./dist/components/*/index.d.cts",
-        "default": "./dist/components/*/index.cjs"
-      }
-    }
-  },
-  "files": [
-    "dist",
-    "README.md",
-    "CHANGELOG.md"
-  ],
+  "name": "chips-component-library-workspace",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Chips component library greenfield workspace",
+  "packageManager": "pnpm@10.4.1",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && tsup",
-    "preview": "vite preview",
-    "test": "vitest",
-    "test:run": "vitest run",
-    "test:coverage": "vitest run --coverage",
-    "lint": "eslint src --ext .ts,.vue",
-    "lint:fix": "eslint src --ext .ts,.vue --fix",
-    "format": "prettier --write \"src/**/*.{ts,vue}\"",
-    "format:check": "prettier --check \"src/**/*.{ts,vue}\"",
-    "type-check": "vue-tsc --noEmit",
-    "clean": "rm -rf dist node_modules/.vite"
-  },
-  "peerDependencies": {
-    "vue": "^3.4.0"
-  },
-  "dependencies": {
-    "vue": "^3.4.21"
+    "build": "pnpm -r --filter @chips/tokens --filter @chips/component-library build",
+    "test": "pnpm -r --if-present test",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "lint": "pnpm -r --if-present lint",
+    "test:contracts": "pnpm --filter @chips/component-library test:contracts",
+    "smoke:ecosystem": "bash ./scripts/smoke-ecosystem.sh",
+    "verify": "pnpm build && pnpm test && pnpm typecheck && pnpm lint"
   },
   "devDependencies": {
-    "@types/node": "^20.11.24",
-    "@typescript-eslint/eslint-plugin": "^7.1.0",
-    "@typescript-eslint/parser": "^7.1.0",
-    "@vitejs/plugin-vue": "^5.0.4",
-    "@vitest/coverage-v8": "^1.3.1",
-    "@vue/test-utils": "^2.4.4",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-vue": "^9.22.0",
-    "happy-dom": "^13.6.2",
-    "prettier": "^3.2.5",
-    "tsup": "^8.0.2",
-    "typescript": "^5.3.3",
-    "vite": "^5.1.4",
-    "vitest": "^1.3.1",
-    "vue-tsc": "^2.0.6"
-  },
-  "keywords": [
-    "chips",
-    "vue3",
-    "typescript",
-    "ui-components",
-    "unstyled",
-    "theme"
-  ],
-  "author": "Chips Team",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/chips/components"
-  },
-  "bugs": {
-    "url": "https://github.com/chips/components/issues"
-  },
-  "engines": {
-    "node": ">=18.0.0"
+    "typescript": "^5.7.3"
   }
 }

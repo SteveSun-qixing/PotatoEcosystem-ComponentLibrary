@@ -1,0 +1,17 @@
+{
+  "name": "@chips/tokens",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node ./build.mjs",
+    "typecheck": "node -e \"console.log('tokens: no typecheck')\""
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.1.1"
+  }
+}
