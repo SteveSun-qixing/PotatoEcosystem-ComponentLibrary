@@ -1,0 +1,46 @@
+{
+  "sys": {
+    "color": {
+      "surface": {
+        "base": {
+          "value": "#ffffff",
+          "type": "color"
+        },
+        "sunken": {
+          "value": "#f3f2f1",
+          "type": "color"
+        }
+      },
+      "text": {
+        "primary": {
+          "value": "#323130",
+          "type": "color"
+        }
+      },
+      "border": {
+        "subtle": {
+          "value": "#c8c6c4",
+          "type": "color"
+        },
+        "focus": {
+          "value": "#0078d4",
+          "type": "color"
+        }
+      }
+    },
+    "radius": {
+      "md": {
+        "value": "4px",
+        "type": "borderRadius"
+      }
+    },
+    "motion": {
+      "duration": {
+        "normal": {
+          "value": "200ms",
+          "type": "duration"
+        }
+      }
+    }
+  }
+}
