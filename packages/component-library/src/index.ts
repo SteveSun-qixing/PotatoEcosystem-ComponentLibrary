@@ -4,6 +4,7 @@ export * from './components/Dialog';
 export * from './components/Form';
 export * from './components/Input';
 export * from './components/ImageViewerShell';
+export * from './components/ChipsFileUpload';
 export * from './components/Menu';
 export * from './components/RadioGroup';
 export * from './components/Select';
