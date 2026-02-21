@@ -52,23 +52,33 @@ export function Select({
   return (
     <ArkSelect.Root
       {...rootProps}
-      className={cx('chips-select', className)}
+      className={cx('chips-select', disabled ? 'chips-select--disabled' : null, className)}
       data-scope={chipsScope}
       onValueChange={(details) => onValueChange?.(details.value[0])}
     >
-      {label ? <ArkSelect.Label data-part="label">{label}</ArkSelect.Label> : null}
-      <ArkSelect.Control data-part="control">
-        <ArkSelect.Trigger data-part="trigger">
-          {placeholder ? <ArkSelect.ValueText placeholder={placeholder} /> : <ArkSelect.ValueText />}
+      {label ? (
+        <ArkSelect.Label className="chips-select__label" data-part="label">
+          {label}
+        </ArkSelect.Label>
+      ) : null}
+      <ArkSelect.Control className="chips-select__control" data-part="control">
+        <ArkSelect.Trigger className="chips-select__trigger" data-part="trigger">
+          {placeholder ? (
+            <ArkSelect.ValueText className="chips-select__value" data-part="value" placeholder={placeholder} />
+          ) : (
+            <ArkSelect.ValueText className="chips-select__value" data-part="value" />
+          )}
         </ArkSelect.Trigger>
-        <ArkSelect.Indicator data-part="indicator">▾</ArkSelect.Indicator>
+        <ArkSelect.Indicator className="chips-select__icon" data-part="indicator">
+          ▾
+        </ArkSelect.Indicator>
       </ArkSelect.Control>
       <ArkSelect.HiddenSelect />
       <ArkSelect.Positioner>
-        <ArkSelect.Content data-part="content">
+        <ArkSelect.Content className="chips-select__panel" data-part="content">
           <ArkSelect.List>
             {collection.items.map((item) => (
-              <ArkSelect.Item key={item.value} item={item} data-part="item">
+              <ArkSelect.Item className="chips-select__option" key={item.value} item={item} data-part="item">
                 <ArkSelect.ItemText>{item.label}</ArkSelect.ItemText>
                 <ArkSelect.ItemIndicator>✓</ArkSelect.ItemIndicator>
               </ArkSelect.Item>
