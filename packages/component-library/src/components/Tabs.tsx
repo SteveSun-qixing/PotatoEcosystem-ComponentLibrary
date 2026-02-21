@@ -35,6 +35,7 @@ export function Tabs({
       {...rootProps}
       className={cx('chips-tabs', className)}
       data-scope={chipsScope}
+      data-part="root"
       onValueChange={(details) => onValueChange?.(details.value)}
     >
       <ArkTabs.List data-part="list">

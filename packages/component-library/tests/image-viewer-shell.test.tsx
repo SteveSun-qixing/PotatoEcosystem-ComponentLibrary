@@ -1,18 +1,11 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import { ThemeProvider } from '../src/theme/ThemeProvider';
 import { ImageViewerShell } from '../src/components/ImageViewerShell';
 
 describe('ImageViewerShell', () => {
-  it('renders shell with scoped parts and token-driven style', () => {
+  it('renders shell with scoped parts and contract class names', () => {
     render(
-      <ThemeProvider defaults={{ 'sys-z-popover': '1350', 'sys-color-text-inverse': '#fafafa' }}>
-        <ImageViewerShell
-          src="https://example.com/demo.png"
-          alt="demo image"
-          chipsScope="image-viewer-shell"
-        />
-      </ThemeProvider>
+      <ImageViewerShell src="https://example.com/demo.png" alt="demo image" chipsScope="image-viewer-shell" />
     );
 
     const overlay = document.querySelector('[data-part="overlay"]') as HTMLElement | null;
@@ -21,10 +14,16 @@ describe('ImageViewerShell', () => {
     }
 
     expect(overlay.getAttribute('data-scope')).toBe('image-viewer-shell');
-    expect(overlay.style.zIndex).toBe('1350');
+    expect(overlay.className.includes('chips-image-viewer-shell')).toBe(true);
+    expect(document.querySelector('[data-part="stage"]')?.className.includes('chips-image-viewer-shell-stage')).toBe(
+      true
+    );
+    expect(document.querySelector('[data-part="image"]')?.className.includes('chips-image-viewer-shell-image')).toBe(
+      true
+    );
 
     const closeButton = screen.getByRole('button', { name: 'Close' });
-    expect(closeButton.style.color).toBe('rgb(250, 250, 250)');
+    expect(closeButton.className.includes('chips-image-viewer-shell-close')).toBe(true);
   });
 
   it('triggers onClose when close button is clicked', () => {

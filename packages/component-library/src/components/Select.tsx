@@ -54,6 +54,7 @@ export function Select({
       {...rootProps}
       className={cx('chips-select', disabled ? 'chips-select--disabled' : null, className)}
       data-scope={chipsScope}
+      data-part="root"
       onValueChange={(details) => onValueChange?.(details.value[0])}
     >
       {label ? (
