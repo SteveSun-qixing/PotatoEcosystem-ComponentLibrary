@@ -20,7 +20,7 @@
     "build": "tsup",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:contracts": "vitest run tests/adapters.test.ts tests/normalize-request.test.ts tests/theme-provider.test.tsx tests/logger.test.ts"
+    "test:contracts": "vitest run tests/adapters.test.ts tests/normalize-request.test.ts tests/theme-provider.test.tsx tests/logger.test.ts tests/file-upload.test.tsx"
   },
   "peerDependencies": {
     "react": "^18.3.1 || ^19.0.0",
