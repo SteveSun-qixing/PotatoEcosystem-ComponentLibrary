@@ -16,7 +16,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
   const controlId = id ?? (label ? `chips-textarea-${label.toLowerCase().replace(/\s+/g, '-')}` : undefined);
 
   return (
-    <div className="chips-textarea-field" data-scope={chipsScope}>
+    <div className="chips-textarea-field" data-scope={chipsScope} data-part="root">
       {label ? (
         <label className="chips-textarea-field__label" data-part="label" htmlFor={controlId}>
           {label}

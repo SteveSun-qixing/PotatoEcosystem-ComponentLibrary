@@ -35,6 +35,7 @@ export function Switch({
       {...rootProps}
       className={cx('chips-switch', className)}
       data-scope={chipsScope}
+      data-part="root"
       onCheckedChange={(details) => onCheckedChange?.(details.checked === true)}
     >
       <ArkSwitch.HiddenInput />

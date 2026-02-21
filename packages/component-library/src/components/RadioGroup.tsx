@@ -40,6 +40,7 @@ export function RadioGroup({
       {...rootProps}
       className={cx('chips-radio-group', className)}
       data-scope={chipsScope}
+      data-part="root"
       onValueChange={(details) => onValueChange?.(details.value)}
     >
       {options.map((item) => (

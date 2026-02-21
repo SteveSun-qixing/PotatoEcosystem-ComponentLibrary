@@ -37,6 +37,7 @@ export function Checkbox({
       onCheckedChange={(details) => onCheckedChange?.(details.checked === true)}
       className={cx('chips-checkbox', className)}
       data-scope="checkbox"
+      data-part="root"
     >
       <ArkCheckbox.HiddenInput />
       <ArkCheckbox.Control data-part="control">
