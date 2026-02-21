@@ -10,6 +10,7 @@ export * from './components/RadioGroup';
 export * from './components/Select';
 export * from './components/Switch';
 export * from './components/Tabs';
+export * from './components/Textarea';
 export * from './theme/ThemeProvider';
 export * from './theme/resolveThemeTokens';
 export * from './theme/useThemeTokens';
