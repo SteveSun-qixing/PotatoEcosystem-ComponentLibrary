@@ -1,9 +1,9 @@
-import { Field } from '@ark-ui/react/field';
+import { ChipsFieldPrimitive } from '@chips/ui-primitives-react/field';
 import { useId } from 'react';
 import type { InputHTMLAttributes, ReactNode } from 'react';
 import { cx } from '../utils/cx';
 
-export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
+export interface ChipsInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   label?: ReactNode;
   helperText?: ReactNode;
   errorText?: ReactNode;
@@ -11,31 +11,31 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   chipsScope?: string;
 }
 
-export function Input({
+export function ChipsInput({
   label,
   helperText,
   errorText,
   invalid,
-  chipsScope = 'input',
+  chipsScope = 'chips-input',
   className,
   id,
   ...props
-}: InputProps) {
+}: ChipsInputProps) {
   const generatedId = id ?? useId();
   const rootProps = {
     ...(invalid !== undefined ? { invalid } : {}),
   };
 
   return (
-    <Field.Root {...rootProps} className={cx('chips-input', className)} data-scope={chipsScope} data-part="root">
+    <ChipsFieldPrimitive.Root {...rootProps} className={cx('chips-input', className)} data-scope={chipsScope} data-part="root">
       {label ? (
-        <Field.Label data-part="label" htmlFor={generatedId}>
+        <ChipsFieldPrimitive.Label data-part="label" htmlFor={generatedId}>
           {label}
-        </Field.Label>
+        </ChipsFieldPrimitive.Label>
       ) : null}
-      <Field.Input {...props} id={generatedId} data-part="control" />
-      {helperText ? <Field.HelperText data-part="helper">{helperText}</Field.HelperText> : null}
-      {errorText ? <Field.ErrorText data-part="error">{errorText}</Field.ErrorText> : null}
-    </Field.Root>
+      <ChipsFieldPrimitive.Input {...props} id={generatedId} data-part="control" />
+      {helperText ? <ChipsFieldPrimitive.HelperText data-part="helper">{helperText}</ChipsFieldPrimitive.HelperText> : null}
+      {errorText ? <ChipsFieldPrimitive.ErrorText data-part="error">{errorText}</ChipsFieldPrimitive.ErrorText> : null}
+    </ChipsFieldPrimitive.Root>
   );
 }

@@ -7,6 +7,12 @@
 3. Component Token：组件值（button.bg.default、input.border.focus）。
 4. Motion Token：动效值（duration、easing、spring）。
 
+## 0. 阶段18-阶段02补充
+
+- token 构建入口已切换为 `@chips/token-engine`。
+- token key 统一前缀：`chips.ref.*`、`chips.sys.*`、`chips.comp.*`、`chips.motion.*`、`chips.layout.*`。
+- CSS 变量前缀统一为 `--chips-*`，禁止新增 `--ark-*` / `--sd-*`。
+
 ## 2. 命名契约
 
 - 统一前缀：`sys` / `cmp` / `motion` / `density`。

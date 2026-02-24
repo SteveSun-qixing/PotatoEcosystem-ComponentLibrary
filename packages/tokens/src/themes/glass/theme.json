@@ -1,35 +1,37 @@
 {
-  "sys": {
-    "color": {
-      "surface": {
-        "base": {
-          "value": "rgba(255, 255, 255, 0.22)",
-          "type": "color"
+  "chips": {
+    "sys": {
+      "color": {
+        "surface": {
+          "base": {
+            "value": "rgba(255, 255, 255, 0.22)",
+            "type": "color"
+          },
+          "sunken": {
+            "value": "rgba(255, 255, 255, 0.12)",
+            "type": "color"
+          },
+          "overlay": {
+            "value": "rgba(255, 255, 255, 0.26)",
+            "type": "color"
+          }
         },
-        "sunken": {
-          "value": "rgba(255, 255, 255, 0.12)",
-          "type": "color"
-        },
-        "overlay": {
-          "value": "rgba(255, 255, 255, 0.26)",
-          "type": "color"
+        "border": {
+          "subtle": {
+            "value": "rgba(255, 255, 255, 0.52)",
+            "type": "color"
+          },
+          "focus": {
+            "value": "#6ee7ff",
+            "type": "color"
+          }
         }
       },
-      "border": {
-        "subtle": {
-          "value": "rgba(255, 255, 255, 0.52)",
-          "type": "color"
-        },
-        "focus": {
-          "value": "#6ee7ff",
-          "type": "color"
+      "elevation": {
+        "1": {
+          "value": "0 10px 32px rgba(7, 12, 20, 0.24)",
+          "type": "boxShadow"
         }
-      }
-    },
-    "elevation": {
-      "1": {
-        "value": "0 10px 32px rgba(7, 12, 20, 0.24)",
-        "type": "boxShadow"
       }
     },
     "motion": {

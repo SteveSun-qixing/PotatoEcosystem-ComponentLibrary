@@ -4,6 +4,12 @@
 
 将 Ark UI 的 primitives 转换为符合薯片生态协议的“稳定部件”，统一输出结构、状态和事件语义。
 
+## 0. 阶段18-阶段02补充
+
+- 对外依赖已切换为 `@chips/ui-primitives-react`。
+- 业务层禁止直接导入 `@ark-ui/react/*`。
+- 组件对外导出统一 `Chips` 前缀（如 `ChipsButton`）。
+
 ## 2. 分层
 
 - Layer A：Ark 原语直连封装（仅适配 props 和 events）。

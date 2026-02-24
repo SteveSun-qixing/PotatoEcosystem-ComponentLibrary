@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import { Input } from '../src/components/Input';
+import { ChipsInput } from '../src/components/Input';
 
-describe('Input', () => {
+describe('ChipsInput', () => {
   it('renders label, helper and error sections', () => {
     render(
-      <Input
+      <ChipsInput
         label="Name"
         helperText="Please input a name"
         errorText="Name is required"
@@ -20,10 +20,10 @@ describe('Input', () => {
   });
 
   it('keeps native textbox role and scope markers', () => {
-    render(<Input label="Email" aria-label="email" chipsScope="input" />);
+    render(<ChipsInput label="Email" aria-label="email" chipsScope="chips-input" />);
 
     const control = screen.getByRole('textbox');
     expect(control.getAttribute('data-part')).toBe('control');
-    expect(control.closest('[data-scope="input"]')).not.toBeNull();
+    expect(control.closest('[data-scope="chips-input"]')).not.toBeNull();
   });
 });

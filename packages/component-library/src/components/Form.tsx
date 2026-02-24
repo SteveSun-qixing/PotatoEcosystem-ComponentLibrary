@@ -1,12 +1,12 @@
 import type { FormHTMLAttributes, ReactNode } from 'react';
 import { cx } from '../utils/cx';
 
-export interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
+export interface ChipsFormProps extends FormHTMLAttributes<HTMLFormElement> {
   children: ReactNode;
   chipsScope?: string;
 }
 
-export function Form({ children, className, chipsScope = 'form', ...props }: FormProps) {
+export function ChipsForm({ children, className, chipsScope = 'chips-form', ...props }: ChipsFormProps) {
   return (
     <form {...props} className={cx('chips-form', className)} data-scope={chipsScope} data-part="root">
       {children}

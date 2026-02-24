@@ -1,18 +1,18 @@
-import { createListCollection } from '@ark-ui/react/collection';
-import { Select as ArkSelect } from '@ark-ui/react/select';
+import { chipsCreateListCollection } from '@chips/ui-primitives-react/collection';
+import { ChipsSelectPrimitive } from '@chips/ui-primitives-react/select';
 import { useMemo } from 'react';
 import { cx } from '../utils/cx';
 
-export interface SelectOption {
+export interface ChipsSelectOption {
   label: string;
   value: string;
   disabled?: boolean;
 }
 
-export interface SelectProps {
+export interface ChipsSelectProps {
   label?: string;
   placeholder?: string;
-  options: SelectOption[];
+  options: ChipsSelectOption[];
   value?: string;
   defaultValue?: string;
   disabled?: boolean;
@@ -21,7 +21,7 @@ export interface SelectProps {
   chipsScope?: string;
 }
 
-export function Select({
+export function ChipsSelect({
   label,
   placeholder,
   options,
@@ -30,11 +30,11 @@ export function Select({
   disabled,
   onValueChange,
   className,
-  chipsScope = 'select',
-}: SelectProps) {
+  chipsScope = 'chips-select',
+}: ChipsSelectProps) {
   const collection = useMemo(
     () =>
-      createListCollection<SelectOption>({
+      chipsCreateListCollection<ChipsSelectOption>({
         items: options,
         itemToString: (item) => item.label,
         itemToValue: (item) => item.value,
@@ -50,7 +50,7 @@ export function Select({
   };
 
   return (
-    <ArkSelect.Root
+    <ChipsSelectPrimitive.Root
       {...rootProps}
       className={cx('chips-select', disabled ? 'chips-select--disabled' : null, className)}
       data-scope={chipsScope}
@@ -58,35 +58,35 @@ export function Select({
       onValueChange={(details) => onValueChange?.(details.value[0])}
     >
       {label ? (
-        <ArkSelect.Label className="chips-select__label" data-part="label">
+        <ChipsSelectPrimitive.Label className="chips-select__label" data-part="label">
           {label}
-        </ArkSelect.Label>
+        </ChipsSelectPrimitive.Label>
       ) : null}
-      <ArkSelect.Control className="chips-select__control" data-part="control">
-        <ArkSelect.Trigger className="chips-select__trigger" data-part="trigger">
+      <ChipsSelectPrimitive.Control className="chips-select__control" data-part="control">
+        <ChipsSelectPrimitive.Trigger className="chips-select__trigger" data-part="trigger">
           {placeholder ? (
-            <ArkSelect.ValueText className="chips-select__value" data-part="value" placeholder={placeholder} />
+            <ChipsSelectPrimitive.ValueText className="chips-select__value" data-part="value" placeholder={placeholder} />
           ) : (
-            <ArkSelect.ValueText className="chips-select__value" data-part="value" />
+            <ChipsSelectPrimitive.ValueText className="chips-select__value" data-part="value" />
           )}
-        </ArkSelect.Trigger>
-        <ArkSelect.Indicator className="chips-select__icon" data-part="indicator">
+        </ChipsSelectPrimitive.Trigger>
+        <ChipsSelectPrimitive.Indicator className="chips-select__icon" data-part="indicator">
           ▾
-        </ArkSelect.Indicator>
-      </ArkSelect.Control>
-      <ArkSelect.HiddenSelect />
-      <ArkSelect.Positioner>
-        <ArkSelect.Content className="chips-select__panel" data-part="content">
-          <ArkSelect.List>
+        </ChipsSelectPrimitive.Indicator>
+      </ChipsSelectPrimitive.Control>
+      <ChipsSelectPrimitive.HiddenSelect />
+      <ChipsSelectPrimitive.Positioner>
+        <ChipsSelectPrimitive.Content className="chips-select__panel" data-part="content">
+          <ChipsSelectPrimitive.List>
             {collection.items.map((item) => (
-              <ArkSelect.Item className="chips-select__option" key={item.value} item={item} data-part="item">
-                <ArkSelect.ItemText>{item.label}</ArkSelect.ItemText>
-                <ArkSelect.ItemIndicator>✓</ArkSelect.ItemIndicator>
-              </ArkSelect.Item>
+              <ChipsSelectPrimitive.Item className="chips-select__option" key={item.value} item={item} data-part="item">
+                <ChipsSelectPrimitive.ItemText>{item.label}</ChipsSelectPrimitive.ItemText>
+                <ChipsSelectPrimitive.ItemIndicator>✓</ChipsSelectPrimitive.ItemIndicator>
+              </ChipsSelectPrimitive.Item>
             ))}
-          </ArkSelect.List>
-        </ArkSelect.Content>
-      </ArkSelect.Positioner>
-    </ArkSelect.Root>
+          </ChipsSelectPrimitive.List>
+        </ChipsSelectPrimitive.Content>
+      </ChipsSelectPrimitive.Positioner>
+    </ChipsSelectPrimitive.Root>
   );
 }

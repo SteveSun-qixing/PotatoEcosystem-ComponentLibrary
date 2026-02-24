@@ -1,12 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import { Select } from '../src/components/Select';
+import { ChipsSelect } from '../src/components/Select';
 
 describe('Select', () => {
   it('renders root classes and scope markers', () => {
     render(
-      <Select
-        chipsScope="select"
+      <ChipsSelect
+        chipsScope="chips-select"
         options={[
           { label: 'Chinese', value: 'zh-CN' },
           { label: 'English', value: 'en-US' },
@@ -17,12 +17,12 @@ describe('Select', () => {
 
     const root = document.querySelector('.chips-select');
     expect(root).not.toBeNull();
-    expect(root?.getAttribute('data-scope')).toBe('select');
+    expect(root?.getAttribute('data-scope')).toBe('chips-select');
   });
 
   it('renders trigger and option classes for theme styling hooks', () => {
     render(
-      <Select
+      <ChipsSelect
         label="Language"
         options={[
           { label: 'Chinese', value: 'zh-CN' },

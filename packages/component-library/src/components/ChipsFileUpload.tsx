@@ -44,7 +44,7 @@ export function ChipsFileUpload({
   disabled = false,
   acceptExtensions = [],
   multiple = false,
-  chipsScope = 'file-upload',
+  chipsScope = 'chips-file-upload',
   onChange,
   onError,
   onDragStateChange

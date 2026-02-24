@@ -20,3 +20,9 @@
 - 类型定义系统
 - 常量定义
 - 工具函数（classNames、mergeRefs、helpers）
+
+### Changed
+
+- 阶段18-阶段02：组件底座切换为 `@chips/ui-primitives-react`（Fork 二开包）。
+- 阶段18-阶段02：token 构建切换为 `@chips/token-engine`（Fork 二开包）。
+- 阶段18-阶段02：组件导出与 scope 命名统一为 Chips 前缀。

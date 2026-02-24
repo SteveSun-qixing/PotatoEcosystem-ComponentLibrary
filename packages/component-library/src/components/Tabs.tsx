@@ -1,15 +1,15 @@
-import { Tabs as ArkTabs } from '@ark-ui/react/tabs';
+import { ChipsTabsPrimitive } from '@chips/ui-primitives-react/tabs';
 import type { ReactNode } from 'react';
 import { cx } from '../utils/cx';
 
-export interface TabItem {
+export interface ChipsTabItem {
   id: string;
   label: string;
   content: ReactNode;
 }
 
-export interface TabsProps {
-  items: TabItem[];
+export interface ChipsTabsProps {
+  items: ChipsTabItem[];
   value?: string;
   defaultValue?: string;
   onValueChange?: (value: string) => void;
@@ -17,40 +17,40 @@ export interface TabsProps {
   chipsScope?: string;
 }
 
-export function Tabs({
+export function ChipsTabs({
   items,
   value,
   defaultValue,
   onValueChange,
   className,
-  chipsScope = 'tabs',
-}: TabsProps) {
+  chipsScope = 'chips-tabs',
+}: ChipsTabsProps) {
   const rootProps = {
     ...(value !== undefined ? { value } : {}),
     ...(defaultValue !== undefined ? { defaultValue } : {}),
   };
 
   return (
-    <ArkTabs.Root
+    <ChipsTabsPrimitive.Root
       {...rootProps}
       className={cx('chips-tabs', className)}
       data-scope={chipsScope}
       data-part="root"
       onValueChange={(details) => onValueChange?.(details.value)}
     >
-      <ArkTabs.List data-part="list">
+      <ChipsTabsPrimitive.List data-part="list">
         {items.map((item) => (
-          <ArkTabs.Trigger key={item.id} value={item.id} data-part="trigger">
+          <ChipsTabsPrimitive.Trigger key={item.id} value={item.id} data-part="trigger">
             {item.label}
-          </ArkTabs.Trigger>
+          </ChipsTabsPrimitive.Trigger>
         ))}
-        <ArkTabs.Indicator data-part="indicator" />
-      </ArkTabs.List>
+        <ChipsTabsPrimitive.Indicator data-part="indicator" />
+      </ChipsTabsPrimitive.List>
       {items.map((item) => (
-        <ArkTabs.Content key={item.id} value={item.id} data-part="content">
+        <ChipsTabsPrimitive.Content key={item.id} value={item.id} data-part="content">
           {item.content}
-        </ArkTabs.Content>
+        </ChipsTabsPrimitive.Content>
       ))}
-    </ArkTabs.Root>
+    </ChipsTabsPrimitive.Root>
   );
 }

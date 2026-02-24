@@ -1,24 +1,24 @@
-import { RadioGroup as ArkRadioGroup } from '@ark-ui/react/radio-group';
+import { ChipsRadioGroupPrimitive } from '@chips/ui-primitives-react/radio-group';
 import { cx } from '../utils/cx';
 
-export interface RadioOption {
+export interface ChipsRadioOption {
   label: string;
   value: string;
   disabled?: boolean;
 }
 
-export interface RadioGroupProps {
-  options: RadioOption[];
+export interface ChipsRadioGroupProps {
+  options: ChipsRadioOption[];
   value?: string;
   defaultValue?: string;
   disabled?: boolean;
   name?: string;
-  onValueChange?: (value: string) => void;
+  onValueChange?: (value: string | undefined) => void;
   className?: string;
   chipsScope?: string;
 }
 
-export function RadioGroup({
+export function ChipsRadioGroup({
   options,
   value,
   defaultValue,
@@ -26,8 +26,8 @@ export function RadioGroup({
   name,
   onValueChange,
   className,
-  chipsScope = 'radio-group',
-}: RadioGroupProps) {
+  chipsScope = 'chips-radio-group',
+}: ChipsRadioGroupProps) {
   const rootProps = {
     ...(value !== undefined ? { value } : {}),
     ...(defaultValue !== undefined ? { defaultValue } : {}),
@@ -36,22 +36,22 @@ export function RadioGroup({
   };
 
   return (
-    <ArkRadioGroup.Root
+    <ChipsRadioGroupPrimitive.Root
       {...rootProps}
       className={cx('chips-radio-group', className)}
       data-scope={chipsScope}
       data-part="root"
-      onValueChange={(details) => onValueChange?.(details.value)}
+      onValueChange={(details) => onValueChange?.(details.value ?? undefined)}
     >
       {options.map((item) => (
-        <ArkRadioGroup.Item key={item.value} value={item.value} disabled={item.disabled} data-part="item">
-          <ArkRadioGroup.ItemHiddenInput />
-          <ArkRadioGroup.ItemControl data-part="control">
-            <ArkRadioGroup.Indicator data-part="indicator" />
-          </ArkRadioGroup.ItemControl>
-          <ArkRadioGroup.ItemText data-part="label">{item.label}</ArkRadioGroup.ItemText>
-        </ArkRadioGroup.Item>
+        <ChipsRadioGroupPrimitive.Item key={item.value} value={item.value} disabled={item.disabled} data-part="item">
+          <ChipsRadioGroupPrimitive.ItemHiddenInput />
+          <ChipsRadioGroupPrimitive.ItemControl data-part="control">
+            <ChipsRadioGroupPrimitive.Indicator data-part="indicator" />
+          </ChipsRadioGroupPrimitive.ItemControl>
+          <ChipsRadioGroupPrimitive.ItemText data-part="label">{item.label}</ChipsRadioGroupPrimitive.ItemText>
+        </ChipsRadioGroupPrimitive.Item>
       ))}
-    </ArkRadioGroup.Root>
+    </ChipsRadioGroupPrimitive.Root>
   );
 }

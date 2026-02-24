@@ -1,11 +1,11 @@
 # Chips 组件库（Greenfield）
 
-薯片组件库的绿地重建仓库，当前技术方案为 Ark UI + Style Dictionary。
+薯片组件库的绿地重建仓库，当前技术方案为 Chips 二开底座（ArkUI Fork + StyleDictionary Fork）。
 
 ## 目录结构
 
-- `packages/tokens`: 设计令牌与主题包构建流水线
-- `packages/component-library`: Headless React 组件层
+- `packages/tokens`: 设计令牌与主题包构建流水线（基于 `@chips/token-engine`）
+- `packages/component-library`: Headless React 组件层（基于 `@chips/ui-primitives-react`）
 - `需求文档` / `技术文档` / `开发计划`: 全量手册与阶段记录
 
 ## 常用命令
@@ -28,3 +28,4 @@ pnpm verify
 - 阶段04：主题分层回退完成（ThemeScope + hooks + 测试）
 - 阶段05：Core/SDK 适配层与日志基座完成（合同测试通过）
 - 阶段06：门禁与生态 smoke 基线完成（verify + smoke 脚本）
+- 阶段18-阶段02：Fork 二开底座接入完成（命名体系 Chips 化、Node 22 基线）

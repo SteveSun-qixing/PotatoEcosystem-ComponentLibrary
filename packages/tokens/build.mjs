@@ -1,4 +1,8 @@
-import StyleDictionary from 'style-dictionary';
+import {
+  ChipsStyleDictionaryEngine,
+  assertChipsTokenName,
+  createChipsTokenBuildManifest,
+} from '@chips/token-engine';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
@@ -50,6 +54,10 @@ async function validateContract(baseTokens, themeId, themeTokens) {
   const contract = await readJson(contractPath);
   const merged = deepMerge(baseTokens, themeTokens);
   const available = collectTokenNames(merged);
+  for (const tokenName of available) {
+    const dotted = tokenName.replace(/-/g, '.');
+    assertChipsTokenName(dotted);
+  }
   const missing = contract.requiredVars.filter((name) => !available.has(name));
 
   if (missing.length > 0) {
@@ -58,7 +66,7 @@ async function validateContract(baseTokens, themeId, themeTokens) {
 }
 
 async function buildCss(source, selector, file) {
-  const sd = new StyleDictionary({
+  const sd = new ChipsStyleDictionaryEngine({
     source,
     platforms: {
       css: {
@@ -109,16 +117,11 @@ async function main() {
 
   await fs.writeFile(
     path.join(outDir, 'manifest.json'),
-    JSON.stringify(
-      {
-        css: {
-          base: './css/base.css',
-        },
-        themes,
-      },
-      null,
-      2,
-    ),
+    JSON.stringify(createChipsTokenBuildManifest({
+      version: '1.0.0',
+      baseCss: './css/base.css',
+      themes,
+    }), null, 2),
   );
 }
 
