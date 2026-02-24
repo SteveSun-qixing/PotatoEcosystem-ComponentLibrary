@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-02-24",
+  "rules": [
+    { "oldPrefix": "sys.", "newPrefix": "chips.sys." },
+    { "oldPrefix": "cmp.", "newPrefix": "chips.comp." },
+    { "oldPrefix": "motion.", "newPrefix": "chips.motion." },
+    { "oldPrefix": "density.", "newPrefix": "chips.layout.density." }
+  ],
+  "cssVariablePrefixes": [
+    "--chips-ref-",
+    "--chips-sys-",
+    "--chips-comp-",
+    "--chips-motion-",
+    "--chips-layout-"
+  ]
+}

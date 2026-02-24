@@ -1,8 +1,8 @@
-import { Switch as ArkSwitch } from '@ark-ui/react/switch';
+import { ChipsSwitchPrimitive } from '@chips/ui-primitives-react/switch';
 import type { ReactNode } from 'react';
 import { cx } from '../utils/cx';
 
-export interface SwitchProps {
+export interface ChipsSwitchProps {
   checked?: boolean;
   defaultChecked?: boolean;
   disabled?: boolean;
@@ -13,7 +13,7 @@ export interface SwitchProps {
   chipsScope?: string;
 }
 
-export function Switch({
+export function ChipsSwitch({
   checked,
   defaultChecked,
   disabled,
@@ -21,8 +21,8 @@ export function Switch({
   onCheckedChange,
   children,
   className,
-  chipsScope = 'switch',
-}: SwitchProps) {
+  chipsScope = 'chips-switch',
+}: ChipsSwitchProps) {
   const rootProps = {
     ...(checked !== undefined ? { checked } : {}),
     ...(defaultChecked !== undefined ? { defaultChecked } : {}),
@@ -31,18 +31,18 @@ export function Switch({
   };
 
   return (
-    <ArkSwitch.Root
+    <ChipsSwitchPrimitive.Root
       {...rootProps}
       className={cx('chips-switch', className)}
       data-scope={chipsScope}
       data-part="root"
       onCheckedChange={(details) => onCheckedChange?.(details.checked === true)}
     >
-      <ArkSwitch.HiddenInput />
-      <ArkSwitch.Control data-part="control">
-        <ArkSwitch.Thumb data-part="thumb" />
-      </ArkSwitch.Control>
-      {children ? <ArkSwitch.Label data-part="label">{children}</ArkSwitch.Label> : null}
-    </ArkSwitch.Root>
+      <ChipsSwitchPrimitive.HiddenInput />
+      <ChipsSwitchPrimitive.Control data-part="control">
+        <ChipsSwitchPrimitive.Thumb data-part="thumb" />
+      </ChipsSwitchPrimitive.Control>
+      {children ? <ChipsSwitchPrimitive.Label data-part="label">{children}</ChipsSwitchPrimitive.Label> : null}
+    </ChipsSwitchPrimitive.Root>
   );
 }

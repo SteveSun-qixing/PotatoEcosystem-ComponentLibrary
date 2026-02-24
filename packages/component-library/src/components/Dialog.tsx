@@ -1,8 +1,8 @@
-import { Dialog as ArkDialog } from '@ark-ui/react/dialog';
+import { ChipsDialogPrimitive } from '@chips/ui-primitives-react/dialog';
 import type { ReactNode } from 'react';
 import { cx } from '../utils/cx';
 
-export interface DialogProps {
+export interface ChipsDialogProps {
   open?: boolean;
   defaultOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
@@ -14,7 +14,7 @@ export interface DialogProps {
   chipsScope?: string;
 }
 
-export function Dialog({
+export function ChipsDialog({
   open,
   defaultOpen,
   onOpenChange,
@@ -23,25 +23,25 @@ export function Dialog({
   trigger,
   children,
   className,
-  chipsScope = 'dialog',
-}: DialogProps) {
+  chipsScope = 'chips-dialog',
+}: ChipsDialogProps) {
   const rootProps = {
     ...(open !== undefined ? { open } : {}),
     ...(defaultOpen !== undefined ? { defaultOpen } : {}),
   };
 
   return (
-    <ArkDialog.Root {...rootProps} onOpenChange={(details) => onOpenChange?.(details.open)}>
-      {trigger ? <ArkDialog.Trigger>{trigger}</ArkDialog.Trigger> : null}
-      <ArkDialog.Positioner>
-        <ArkDialog.Backdrop data-scope={chipsScope} data-part="backdrop" />
-        <ArkDialog.Content className={cx('chips-dialog', className)} data-scope={chipsScope} data-part="content">
-          {title ? <ArkDialog.Title data-part="title">{title}</ArkDialog.Title> : null}
-          {description ? <ArkDialog.Description data-part="description">{description}</ArkDialog.Description> : null}
+    <ChipsDialogPrimitive.Root {...rootProps} onOpenChange={(details) => onOpenChange?.(details.open)}>
+      {trigger ? <ChipsDialogPrimitive.Trigger>{trigger}</ChipsDialogPrimitive.Trigger> : null}
+      <ChipsDialogPrimitive.Positioner>
+        <ChipsDialogPrimitive.Backdrop data-scope={chipsScope} data-part="backdrop" />
+        <ChipsDialogPrimitive.Content className={cx('chips-dialog', className)} data-scope={chipsScope} data-part="content">
+          {title ? <ChipsDialogPrimitive.Title data-part="title">{title}</ChipsDialogPrimitive.Title> : null}
+          {description ? <ChipsDialogPrimitive.Description data-part="description">{description}</ChipsDialogPrimitive.Description> : null}
           <div data-part="body">{children}</div>
-          <ArkDialog.CloseTrigger data-part="close">Close</ArkDialog.CloseTrigger>
-        </ArkDialog.Content>
-      </ArkDialog.Positioner>
-    </ArkDialog.Root>
+          <ChipsDialogPrimitive.CloseTrigger data-part="close">Close</ChipsDialogPrimitive.CloseTrigger>
+        </ChipsDialogPrimitive.Content>
+      </ChipsDialogPrimitive.Positioner>
+    </ChipsDialogPrimitive.Root>
   );
 }

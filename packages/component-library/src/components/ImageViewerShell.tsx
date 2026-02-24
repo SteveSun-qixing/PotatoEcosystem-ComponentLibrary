@@ -7,7 +7,7 @@ type ImageProps = Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt'>;
 
 type CloseButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type' | 'onClick'>;
 
-export interface ImageViewerShellProps {
+export interface ChipsImageViewerShellProps {
   src: string;
   alt?: string;
   chipsScope?: string;
@@ -20,10 +20,10 @@ export interface ImageViewerShellProps {
   closeButtonProps?: CloseButtonProps;
 }
 
-export function ImageViewerShell({
+export function ChipsImageViewerShell({
   src,
   alt = '',
-  chipsScope = 'image-viewer-shell',
+  chipsScope = 'chips-image-viewer-shell',
   className,
   closeLabel = 'Close',
   onClose,
@@ -31,7 +31,7 @@ export function ImageViewerShell({
   stageProps,
   imageProps,
   closeButtonProps,
-}: ImageViewerShellProps) {
+}: ChipsImageViewerShellProps) {
   const overlayClassName = cx('chips-image-viewer-shell', className, overlayProps?.className);
   const stageClassName = cx('chips-image-viewer-shell-stage', stageProps?.className);
   const imageClassName = cx('chips-image-viewer-shell-image', imageProps?.className);

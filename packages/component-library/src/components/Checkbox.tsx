@@ -1,8 +1,8 @@
-import { Checkbox as ArkCheckbox } from '@ark-ui/react/checkbox';
+import { ChipsCheckboxPrimitive } from '@chips/ui-primitives-react/checkbox';
 import type { ReactNode } from 'react';
 import { cx } from '../utils/cx';
 
-export interface CheckboxProps {
+export interface ChipsCheckboxProps {
   checked?: boolean;
   defaultChecked?: boolean;
   disabled?: boolean;
@@ -13,7 +13,7 @@ export interface CheckboxProps {
   className?: string;
 }
 
-export function Checkbox({
+export function ChipsCheckbox({
   checked,
   defaultChecked,
   disabled,
@@ -22,7 +22,7 @@ export function Checkbox({
   onCheckedChange,
   children,
   className,
-}: CheckboxProps) {
+}: ChipsCheckboxProps) {
   const rootProps = {
     ...(checked !== undefined ? { checked } : {}),
     ...(defaultChecked !== undefined ? { defaultChecked } : {}),
@@ -32,18 +32,18 @@ export function Checkbox({
   };
 
   return (
-    <ArkCheckbox.Root
+    <ChipsCheckboxPrimitive.Root
       {...rootProps}
       onCheckedChange={(details) => onCheckedChange?.(details.checked === true)}
       className={cx('chips-checkbox', className)}
-      data-scope="checkbox"
+      data-scope="chips-checkbox"
       data-part="root"
     >
-      <ArkCheckbox.HiddenInput />
-      <ArkCheckbox.Control data-part="control">
-        <ArkCheckbox.Indicator data-part="indicator">✓</ArkCheckbox.Indicator>
-      </ArkCheckbox.Control>
-      <ArkCheckbox.Label data-part="label">{children}</ArkCheckbox.Label>
-    </ArkCheckbox.Root>
+      <ChipsCheckboxPrimitive.HiddenInput />
+      <ChipsCheckboxPrimitive.Control data-part="control">
+        <ChipsCheckboxPrimitive.Indicator data-part="indicator">✓</ChipsCheckboxPrimitive.Indicator>
+      </ChipsCheckboxPrimitive.Control>
+      <ChipsCheckboxPrimitive.Label data-part="label">{children}</ChipsCheckboxPrimitive.Label>
+    </ChipsCheckboxPrimitive.Root>
   );
 }

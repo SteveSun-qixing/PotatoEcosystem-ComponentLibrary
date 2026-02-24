@@ -1,7 +1,7 @@
 import { forwardRef, type TextareaHTMLAttributes } from 'react';
 import { cx } from '../utils/cx';
 
-export interface TextareaProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'size'> {
+export interface ChipsTextareaProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'size'> {
   label?: string;
   helperText?: string;
   errorText?: string;
@@ -9,8 +9,8 @@ export interface TextareaProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaE
   chipsScope?: string;
 }
 
-export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function Textarea(
-  { label, helperText, errorText, invalid = false, chipsScope = 'textarea', className, id, ...props },
+export const ChipsTextarea = forwardRef<HTMLTextAreaElement, ChipsTextareaProps>(function ChipsTextarea(
+  { label, helperText, errorText, invalid = false, chipsScope = 'chips-textarea', className, id, ...props },
   ref,
 ) {
   const controlId = id ?? (label ? `chips-textarea-${label.toLowerCase().replace(/\s+/g, '-')}` : undefined);

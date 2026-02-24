@@ -20,14 +20,15 @@
     "build": "tsup",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:contracts": "vitest run tests/adapters.test.ts tests/normalize-request.test.ts tests/theme-provider.test.tsx tests/logger.test.ts tests/file-upload.test.tsx tests/theme-interface.contract.test.ts"
+    "test:contracts": "vitest run tests/adapters.test.ts tests/normalize-request.test.ts tests/theme-provider.test.tsx tests/logger.test.ts tests/file-upload.test.tsx tests/theme-interface.contract.test.ts",
+    "verify:naming": "node ../../scripts/verify-component-naming.mjs"
   },
   "peerDependencies": {
     "react": "^18.3.1 || ^19.0.0",
     "react-dom": "^18.3.1 || ^19.0.0"
   },
   "dependencies": {
-    "@ark-ui/react": "^4.7.0"
+    "@chips/ui-primitives-react": "file:../../../Chips-ArkUI-Fork/packages/ui-primitives-react"
   },
   "devDependencies": {
     "@testing-library/react": "^16.2.0",

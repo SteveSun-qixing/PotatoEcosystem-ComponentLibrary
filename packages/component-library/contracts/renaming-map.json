@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-02-24",
+  "components": [
+    { "oldExport": "Button", "newExport": "ChipsButton", "oldScope": "button", "newScope": "chips-button" },
+    { "oldExport": "Input", "newExport": "ChipsInput", "oldScope": "input", "newScope": "chips-input" },
+    { "oldExport": "Textarea", "newExport": "ChipsTextarea", "oldScope": "textarea", "newScope": "chips-textarea" },
+    { "oldExport": "Checkbox", "newExport": "ChipsCheckbox", "oldScope": "checkbox", "newScope": "chips-checkbox" },
+    { "oldExport": "Switch", "newExport": "ChipsSwitch", "oldScope": "switch", "newScope": "chips-switch" },
+    { "oldExport": "Select", "newExport": "ChipsSelect", "oldScope": "select", "newScope": "chips-select" },
+    { "oldExport": "Dialog", "newExport": "ChipsDialog", "oldScope": "dialog", "newScope": "chips-dialog" },
+    { "oldExport": "Tabs", "newExport": "ChipsTabs", "oldScope": "tabs", "newScope": "chips-tabs" },
+    { "oldExport": "Form", "newExport": "ChipsForm", "oldScope": "form", "newScope": "chips-form" },
+    { "oldExport": "ChipsFileUpload", "newExport": "ChipsFileUpload", "oldScope": "file-upload", "newScope": "chips-file-upload" },
+    { "oldExport": "ImageViewerShell", "newExport": "ChipsImageViewerShell", "oldScope": "image-viewer-shell", "newScope": "chips-image-viewer-shell" },
+    { "oldExport": "Menu", "newExport": "ChipsMenu", "oldScope": "menu", "newScope": "chips-menu" },
+    { "oldExport": "RadioGroup", "newExport": "ChipsRadioGroup", "oldScope": "radio-group", "newScope": "chips-radio-group" }
+  ]
+}

@@ -36,8 +36,8 @@ const readContract = (filePath: string): ThemeInterfaceContract =>
 
 const getExportedComponentNames = (): string[] => {
   const source = fs.readFileSync(sourceIndexPath, 'utf-8');
-  const matches = source.matchAll(/export \* from '\.\/components\/([A-Za-z0-9]+)';/g);
-  return Array.from(matches, (match) => match[1]).sort();
+  const matches = source.matchAll(/export\s+\{[^}]*\b(Chips[A-Za-z0-9]+)\b[^}]*\}\s+from '\.\/components\/[A-Za-z0-9]+';/g);
+  return Array.from(matches, (match) => match[1]).filter((name): name is string => Boolean(name)).sort();
 };
 
 describe('Theme Interface Contract Source', () => {

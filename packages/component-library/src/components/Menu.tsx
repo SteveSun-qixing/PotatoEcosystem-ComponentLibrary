@@ -1,31 +1,31 @@
-import { Menu as ArkMenu } from '@ark-ui/react/menu';
+import { ChipsMenuPrimitive } from '@chips/ui-primitives-react/menu';
 import type { ReactNode } from 'react';
 import { cx } from '../utils/cx';
 
-export interface MenuItem {
+export interface ChipsMenuItem {
   id: string;
   label: string;
   disabled?: boolean;
 }
 
-export interface MenuProps {
+export interface ChipsMenuProps {
   trigger: ReactNode;
-  items: MenuItem[];
+  items: ChipsMenuItem[];
   onSelect?: (id: string) => void;
   className?: string;
   chipsScope?: string;
 }
 
-export function Menu({ trigger, items, onSelect, className, chipsScope = 'menu' }: MenuProps) {
+export function ChipsMenu({ trigger, items, onSelect, className, chipsScope = 'chips-menu' }: ChipsMenuProps) {
   return (
-    <ArkMenu.Root>
-      <ArkMenu.Trigger data-scope={chipsScope} data-part="trigger">
+    <ChipsMenuPrimitive.Root>
+      <ChipsMenuPrimitive.Trigger data-scope={chipsScope} data-part="trigger">
         {trigger}
-      </ArkMenu.Trigger>
-      <ArkMenu.Positioner>
-        <ArkMenu.Content className={cx('chips-menu', className)} data-scope={chipsScope} data-part="content">
+      </ChipsMenuPrimitive.Trigger>
+      <ChipsMenuPrimitive.Positioner>
+        <ChipsMenuPrimitive.Content className={cx('chips-menu', className)} data-scope={chipsScope} data-part="content">
           {items.map((item) => (
-            <ArkMenu.Item
+            <ChipsMenuPrimitive.Item
               key={item.id}
               value={item.id}
               disabled={item.disabled}
@@ -33,10 +33,10 @@ export function Menu({ trigger, items, onSelect, className, chipsScope = 'menu' 
               onSelect={() => onSelect?.(item.id)}
             >
               <span data-part="item-text">{item.label}</span>
-            </ArkMenu.Item>
+            </ChipsMenuPrimitive.Item>
           ))}
-        </ArkMenu.Content>
-      </ArkMenu.Positioner>
-    </ArkMenu.Root>
+        </ChipsMenuPrimitive.Content>
+      </ChipsMenuPrimitive.Positioner>
+    </ChipsMenuPrimitive.Root>
   );
 }
